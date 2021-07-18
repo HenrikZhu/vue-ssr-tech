@@ -1,24 +1,8 @@
 <template>
   <section class="real-app">
-    <input
-      type="text"
-      class="add-input"
-      autofocus="autofocus"
-      placeholder="接下去要做什么？"
-      @keyup.enter="addTodo"
-    />
-    <Item
-      v-for="todo in filterTodos"
-      :todo="todo"
-      :key="todo.id"
-      @del="deleteTodo"
-    ></Item>
-    <tabs
-      :filter="filter"
-      :todos="todos"
-      @toggle="toggleFilter"
-      @clearAll="clearAllCompletedTodo"
-    ></tabs>
+    <input type="text" class="add-input" autofocus="autofocus" placeholder="接下去要做什么？" @keyup.enter="addTodo"/>
+    <Item v-for="todo in filterTodos" :todo="todo" :key="todo.id" @del="deleteTodo"></Item>
+    <tabs :filter="filter" :todos="todos" @toggle="toggleFilter" @clearAll="clearAllCompletedTodo"></tabs>
   </section>
 </template>
 
